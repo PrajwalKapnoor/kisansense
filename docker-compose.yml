@@ -1,0 +1,27 @@
+# Start everything:  docker compose up --build
+# Then open http://localhost:8501   (API docs: http://localhost:8000/docs)
+# Needs trained models in ./artifacts (see README "Run it").
+services:
+  api:
+    build:
+      context: .
+      target: api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./docs/results:/app/docs/results:ro
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      target: app
+    ports:
+      - "8501:8501"
+    environment:
+      KISANSENSE_API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
