@@ -31,7 +31,20 @@ def _detail_text(response: requests.Response) -> str:
     return str(detail) if detail else f"HTTP {response.status_code}"
 
 
+def _ensure_embedded() -> None:
+    """In embedded mode (single-app hosts) start the API and fetch models on first use."""
+    try:
+        import embedded
+    except ImportError:
+        return
+    try:
+        embedded.ensure_ready()
+    except Exception as e:  # download or start-up failed
+        raise ApiError(f"The service could not start: {e}") from e
+
+
 def _request(method: str, path: str, **kwargs):
+    _ensure_embedded()
     try:
         r = requests.request(method, API_URL + path, timeout=TIMEOUT, **kwargs)
     except requests.ConnectionError as e:
