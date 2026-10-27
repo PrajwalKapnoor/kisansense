@@ -2,7 +2,7 @@
 
 Decision support for farmers, in one app: **check a tomato leaf for disease**, **get crop suggestions from soil and weather**, and **see where Karnataka tomato prices are heading**.
 
-**Live demo:** https://YOUR-APP.streamlit.app  (free hosting, it may take a minute to wake up)
+**Live demo:** https://kisansensee.streamlit.app/ (free hosting, it may take a minute to wake up)
 
 Built end to end: data audit → leakage-aware evaluation → trained models → FastAPI backend → Streamlit app → 46 automated tests.
 
