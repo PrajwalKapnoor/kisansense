@@ -116,6 +116,24 @@ def test_price_page_renders_metrics_and_chart(monkeypatch):
     assert len(at.get("vega_lite_chart")) == 1
 
 
+def test_price_page_warns_when_data_is_old(monkeypatch):
+    monkeypatch.setattr(api_client, "price_forecast", lambda days: {**PRICE, "last_date": "2020-01-01"})
+    monkeypatch.setattr(api_client, "metrics", lambda m: None)
+    at = _page("pages/3_Price_Explorer.py").run()
+    assert not at.exception
+    assert any("ends on 2020-01-01" in w.value for w in at.warning)
+
+
+def test_price_page_no_warning_when_data_is_fresh(monkeypatch):
+    from datetime import date
+
+    monkeypatch.setattr(api_client, "price_forecast", lambda days: {**PRICE, "last_date": date.today().isoformat()})
+    monkeypatch.setattr(api_client, "metrics", lambda m: None)
+    at = _page("pages/3_Price_Explorer.py").run()
+    assert not at.exception
+    assert not any("ends on" in w.value for w in at.warning)
+
+
 def test_price_page_handles_missing_model(monkeypatch):
     def nope(days):
         raise api_client.ApiError("The price forecasting model is not available.", 503)

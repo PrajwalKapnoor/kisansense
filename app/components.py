@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import base64
 import io
+from datetime import date
 
 import altair as alt
 import pandas as pd
@@ -170,6 +171,16 @@ def render_price(data: dict) -> None:
     c1.metric(f"Latest price ({data['last_date']})", f"Rs {data['last_price']:,.0f}")
     c2.metric("Expected 7-day change", f"{data['expected_change_pct']:+.1f}%")
     c3.metric("Trend signal", data["trend"].capitalize())
+
+    try:
+        age_days = (date.today() - date.fromisoformat(data["last_date"])).days
+    except ValueError:
+        age_days = 0
+    if age_days > 7:
+        st.warning(
+            f"The price data in this demo ends on {data['last_date']} ({age_days} days ago). The forecast covers "
+            "the 7 days after that date, so those dates may already have passed. The app does not fetch new prices."
+        )
 
     if data["trend"] == "no clear trend":
         st.info(
