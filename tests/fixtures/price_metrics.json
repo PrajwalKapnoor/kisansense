@@ -1,0 +1,104 @@
+{
+  "series": {
+    "start": "2024-01-01",
+    "end": "2026-10-01",
+    "days": 1005,
+    "interpolated_days": 16,
+    "gaps": {
+      "expected_days": 1005,
+      "present_days": 989,
+      "missing_days": 16,
+      "longest_gap_days": 6
+    }
+  },
+  "backtest": {
+    "initial_train_days": 365,
+    "step_days": 7,
+    "horizon_days": 7,
+    "origins": 91,
+    "validation_origins": 54,
+    "test_origins": 37
+  },
+  "selected_model": "arima",
+  "validation": {
+    "arima": {
+      "mae": 220.5162,
+      "rmse": 356.2097,
+      "mape_pct": 16.4579,
+      "n": 371
+    },
+    "moving_average_7": {
+      "mae": 234.3826,
+      "rmse": 377.7201,
+      "mape_pct": 17.9243,
+      "n": 371
+    },
+    "lag_gbm": {
+      "mae": 238.966,
+      "rmse": 387.1486,
+      "mape_pct": 17.8886,
+      "n": 371
+    },
+    "naive_last": {
+      "mae": 249.4221,
+      "rmse": 408.8883,
+      "mape_pct": 18.2761,
+      "n": 371
+    },
+    "seasonal_naive_7": {
+      "mae": 295.0357,
+      "rmse": 453.2721,
+      "mape_pct": 21.8211,
+      "n": 371
+    }
+  },
+  "test": {
+    "lag_gbm": {
+      "mae": 186.561,
+      "rmse": 262.647,
+      "mape_pct": 15.5572,
+      "n": 259
+    },
+    "arima": {
+      "mae": 188.4937,
+      "rmse": 263.5074,
+      "mape_pct": 16.115,
+      "n": 259
+    },
+    "naive_last": {
+      "mae": 204.4244,
+      "rmse": 297.8166,
+      "mape_pct": 17.7493,
+      "n": 259
+    },
+    "moving_average_7": {
+      "mae": 205.6196,
+      "rmse": 278.8674,
+      "mape_pct": 17.4567,
+      "n": 259
+    },
+    "seasonal_naive_7": {
+      "mae": 235.8853,
+      "rmse": 325.1065,
+      "mape_pct": 19.8673,
+      "n": 259
+    }
+  },
+  "test_mae_vs_naive": {
+    "lag_gbm": 0.9126161686212618,
+    "arima": 0.9220703825686544,
+    "naive_last": 1.0,
+    "moving_average_7": 1.0058464507611864,
+    "seasonal_naive_7": 1.1538996772555845
+  },
+  "interval": {
+    "quantiles": [
+      0.1,
+      0.9
+    ],
+    "target_coverage": 0.8,
+    "coverage_on_test": 0.752895752895753
+  },
+  "trend_threshold_pct": 10.104703248925988,
+  "note": "Model chosen on validation origins; test origins used for reporting only."
+}

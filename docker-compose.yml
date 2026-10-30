@@ -21,6 +21,8 @@ services:
       - "8501:8501"
     environment:
       KISANSENSE_API_URL: http://api:8000
+    volumes:
+      - ./docs/results:/app/docs/results:ro
     depends_on:
       api:
         condition: service_healthy

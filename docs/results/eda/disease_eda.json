@@ -1,0 +1,36 @@
+{
+  "images_total": 9350,
+  "images_sampled": 600,
+  "size_counts": [
+    {
+      "size": "256x256",
+      "count": 600
+    }
+  ],
+  "brightness_by_class": {
+    "Bacterial spot": {
+      "mean": 0.3953,
+      "std": 0.0408
+    },
+    "Early blight": {
+      "mean": 0.4132,
+      "std": 0.045
+    },
+    "Late blight": {
+      "mean": 0.4187,
+      "std": 0.1256
+    },
+    "Leaf Mold": {
+      "mean": 0.4548,
+      "std": 0.0396
+    },
+    "Septoria leaf spot": {
+      "mean": 0.5001,
+      "std": 0.0605
+    },
+    "healthy": {
+      "mean": 0.4388,
+      "std": 0.0367
+    }
+  }
+}

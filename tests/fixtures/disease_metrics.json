@@ -1,0 +1,87 @@
+{
+ "data": {
+  "classes": [
+   "Tomato___Bacterial_spot",
+   "Tomato___Early_blight",
+   "Tomato___Late_blight",
+   "Tomato___Leaf_Mold",
+   "Tomato___Septoria_leaf_spot",
+   "Tomato___healthy"
+  ],
+  "images": {
+   "train": 5606,
+   "val": 1871,
+   "test": 1873
+  },
+  "duplicate_groups": 14,
+  "images_in_duplicate_groups": 28,
+  "class_counts": {
+   "Tomato___Bacterial_spot": 2127,
+   "Tomato___Late_blight": 1909,
+   "Tomato___Septoria_leaf_spot": 1771,
+   "Tomato___healthy": 1591,
+   "Tomato___Early_blight": 1000,
+   "Tomato___Leaf_Mold": 952
+  }
+ },
+ "selected_model": "mobilenetv2_finetuned",
+ "results": {
+  "baseline_cnn": {
+   "validation": {
+    "accuracy": 0.8348476750400855,
+    "macro_f1": 0.8272407698403907,
+    "per_class_f1": {
+     "Tomato___Bacterial_spot": 0.912751677852349,
+     "Tomato___Early_blight": 0.6696035242290749,
+     "Tomato___Late_blight": 0.8017917133258678,
+     "Tomato___Leaf_Mold": 0.8722891566265061,
+     "Tomato___Septoria_leaf_spot": 0.7316239316239316,
+     "Tomato___healthy": 0.9753846153846154
+    },
+    "n": 1871
+   },
+   "test": {
+    "accuracy": 0.8264815803523758,
+    "macro_f1": 0.8254210726903616,
+    "per_class_f1": {
+     "Tomato___Bacterial_spot": 0.8958594730238394,
+     "Tomato___Early_blight": 0.6942800788954635,
+     "Tomato___Late_blight": 0.7678369195922989,
+     "Tomato___Leaf_Mold": 0.8983957219251337,
+     "Tomato___Septoria_leaf_spot": 0.7213114754098361,
+     "Tomato___healthy": 0.9748427672955975
+    },
+    "n": 1873
+   }
+  },
+  "mobilenetv2_finetuned": {
+   "validation": {
+    "accuracy": 0.9305184393372528,
+    "macro_f1": 0.9198876277901927,
+    "per_class_f1": {
+     "Tomato___Bacterial_spot": 0.9525,
+     "Tomato___Early_blight": 0.817910447761194,
+     "Tomato___Late_blight": 0.9287531806615776,
+     "Tomato___Leaf_Mold": 0.9174757281553398,
+     "Tomato___Septoria_leaf_spot": 0.9238985313751669,
+     "Tomato___healthy": 0.9787878787878788
+    },
+    "n": 1871
+   },
+   "test": {
+    "accuracy": 0.9348638547784304,
+    "macro_f1": 0.9302659480365691,
+    "per_class_f1": {
+     "Tomato___Bacterial_spot": 0.9433051869722557,
+     "Tomato___Early_blight": 0.8472906403940886,
+     "Tomato___Late_blight": 0.9310793237971391,
+     "Tomato___Leaf_Mold": 0.9470899470899471,
+     "Tomato___Septoria_leaf_spot": 0.9237170596393898,
+     "Tomato___healthy": 0.9891135303265941
+    },
+    "n": 1873
+   }
+  }
+ },
+ "note": "Selected by validation macro-F1; test set used once for reporting. PlantVillage photos are lab images; scores do not describe field performance."
+}

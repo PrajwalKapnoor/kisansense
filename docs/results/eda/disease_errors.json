@@ -1,0 +1,48 @@
+{
+  "mistakes": 124,
+  "test_images": 1873,
+  "top_confusions": [
+    {
+      "true": "Bacterial spot",
+      "predicted": "Septoria leaf spot",
+      "count": 20
+    },
+    {
+      "true": "Early blight",
+      "predicted": "Septoria leaf spot",
+      "count": 19
+    },
+    {
+      "true": "Late blight",
+      "predicted": "Early blight",
+      "count": 15
+    },
+    {
+      "true": "Early blight",
+      "predicted": "Late blight",
+      "count": 13
+    },
+    {
+      "true": "Late blight",
+      "predicted": "Leaf Mold",
+      "count": 8
+    },
+    {
+      "true": "Early blight",
+      "predicted": "Bacterial spot",
+      "count": 6
+    },
+    {
+      "true": "Septoria leaf spot",
+      "predicted": "Bacterial spot",
+      "count": 5
+    },
+    {
+      "true": "Bacterial spot",
+      "predicted": "Late blight",
+      "count": 4
+    }
+  ],
+  "mean_confidence_when_wrong": 0.693,
+  "mean_confidence_when_right": 0.94
+}

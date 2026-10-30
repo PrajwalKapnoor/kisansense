@@ -1,0 +1,68 @@
+{
+  "selected_model": "random_forest",
+  "n_rows": 2200,
+  "n_train": 1760,
+  "n_test": 440,
+  "cv": {
+    "logistic_regression": {
+      "cv_accuracy_mean": 0.9681818181818181,
+      "cv_accuracy_std": 0.006577180058403534,
+      "cv_f1_macro_mean": 0.9678236006626216,
+      "cv_f1_macro_std": 0.006765232166249332
+    },
+    "random_forest": {
+      "cv_accuracy_mean": 0.99375,
+      "cv_accuracy_std": 0.005508727110700368,
+      "cv_f1_macro_mean": 0.9937136490573764,
+      "cv_f1_macro_std": 0.005550849628890096
+    },
+    "hist_gradient_boosting": {
+      "cv_accuracy_mean": 0.9926136363636363,
+      "cv_accuracy_std": 0.004251883394061299,
+      "cv_f1_macro_mean": 0.9926237317107596,
+      "cv_f1_macro_std": 0.004250043018765069
+    }
+  },
+  "test": {
+    "logistic_regression": {
+      "test_accuracy": 0.9727272727272728,
+      "test_f1_macro": 0.9724640256149183,
+      "test_top3_accuracy": 1.0
+    },
+    "random_forest": {
+      "test_accuracy": 0.9931818181818182,
+      "test_f1_macro": 0.9931775541531639,
+      "test_top3_accuracy": 1.0
+    },
+    "hist_gradient_boosting": {
+      "test_accuracy": 0.9886363636363636,
+      "test_f1_macro": 0.9886121580601682,
+      "test_top3_accuracy": 0.9977272727272727
+    }
+  },
+  "per_class_f1_selected": {
+    "apple": 1.0,
+    "banana": 1.0,
+    "blackgram": 0.9743589743589743,
+    "chickpea": 1.0,
+    "coconut": 1.0,
+    "coffee": 1.0,
+    "cotton": 1.0,
+    "grapes": 1.0,
+    "jute": 0.975609756097561,
+    "kidneybeans": 1.0,
+    "lentil": 0.9743589743589743,
+    "maize": 0.975609756097561,
+    "mango": 1.0,
+    "mothbeans": 0.975609756097561,
+    "mungbean": 1.0,
+    "muskmelon": 1.0,
+    "orange": 1.0,
+    "papaya": 1.0,
+    "pigeonpeas": 1.0,
+    "pomegranate": 1.0,
+    "rice": 0.9743589743589743,
+    "watermelon": 1.0
+  },
+  "note": "Selection by CV macro-F1 on training data only. Test set used once for reporting."
+}
