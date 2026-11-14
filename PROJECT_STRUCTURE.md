@@ -1,5 +1,6 @@
 # KisanSense — Complete Project File Directory & Architecture
 
+
 This document provides a comprehensive map of the entire **KisanSense** repository, detailing the purpose, dependencies, and roles of each directory and file.
 
 ---
